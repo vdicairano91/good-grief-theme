@@ -1,0 +1,111 @@
+@import "main-menu";
+
+header {
+	width: 100%;
+	min-height: 125px;
+	background-color: $white;
+}
+
+//Logo
+.header-logo {
+	width: 105px;
+	height: 70px;
+	@media screen and (min-width: $breakpoint-sm) {
+		width: 210px;
+		height: 140px;
+	}
+}
+
+//Full Menu
+.full-menu {
+	z-index: 9;
+	position: relative;
+	padding: 25px 0 0;
+	
+	&>.flex {
+		flex-direction: column;
+		position: relative;
+
+		@media screen and (min-width: $breakpoint-sm) {
+			align-items: center;
+			justify-content: space-between;
+		}
+	}
+}
+
+#navigation {
+	width: 100%;
+	max-width: 700px;
+	@media screen and (max-width: $breakpoint-sm) {
+		max-height: 0;
+		overflow: hidden;
+		transition: 0.3s linear;
+		flex-direction: column;
+
+		&.open {
+			max-height: 300px;
+		}
+	}
+}
+
+
+//Hamburger/Mobile Menu
+@media screen and (max-width: $breakpoint-sm) {
+	#hamburger {
+		width: 50px;
+		height: 40px;
+		position: absolute;
+		top: 18px;
+		right: 0;
+		transform: rotate(0deg);
+		transition: .5s ease-in-out;
+
+		span {
+			display: block;
+			position: absolute;
+			height: 5px;
+			width: 100%;
+			background: $darkGreen;
+			border-radius: 6px;
+			opacity: 1;
+			left: 0;
+			transform: rotate(0deg);
+			transition: .25s ease-in-out;
+
+			&:nth-child(1) {
+				top: 0px;
+			}
+
+			&:nth-child(2),
+			&:nth-child(3) {
+				top: 15px;
+			}
+
+			&:nth-child(4) {
+				top: 30px;
+			}
+		}
+
+		&.open span {
+			&:nth-child(1) {
+				top: 18px;
+				width: 0%;
+				left: 50%;
+			}
+
+			&:nth-child(2) {
+				transform: rotate(45deg);
+			}
+
+			&:nth-child(3) {
+				transform: rotate(-45deg);
+			}
+
+			&:nth-child(4) {
+				top: 18px;
+				width: 0%;
+				left: 50%;
+			}
+		}
+	}
+}

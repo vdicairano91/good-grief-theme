@@ -1,0 +1,38 @@
+footer {
+	background-color: $gray;
+	padding: 75px 0 50px;
+
+	.container {
+		justify-content: space-between;
+			@media screen and (max-width: $breakpoint-sm) {
+			flex-direction: column;
+		}
+	}
+
+	p,
+	a {
+		font-size: 14px;
+	}
+
+	p+p {
+		margin-top: 10px;
+	}
+}
+
+.social-media-row {
+	a {
+		width: 40px;
+		display: inline-block;
+	}
+
+	img {
+		filter: invert(46%) sepia(7%) saturate(815%) hue-rotate(34deg) brightness(91%) contrast(92%);
+
+		&:hover {
+			filter: invert(77%) sepia(8%) saturate(664%) hue-rotate(21deg) brightness(86%) contrast(81%);
+		}
+	}
+		@media screen and (max-width: $breakpoint-sm) {
+			margin-top: 25px;
+		}
+}

@@ -1,0 +1,31 @@
+.hero {
+  background-color: $beige;
+  width: 100%;
+  padding: 50px 0;
+  box-sizing: border-box;
+  min-height: 250px;
+  @media screen and (min-width: $breakpoint-sm) {
+    padding: 100px 0;
+    min-height: 450px;
+  }
+
+  &.flex {
+    align-items: center;
+  }
+}
+
+.hero-content {
+  width: 100%;
+
+  &.flex {
+    flex-direction: column;
+  }
+
+  h1+h2 {
+    margin-top: 25px;
+
+    @media screen and (min-width: $breakpoint-sm) {
+      margin-top: 50px;
+    }
+  }
+}

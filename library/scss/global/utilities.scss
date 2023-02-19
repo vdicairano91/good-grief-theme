@@ -1,0 +1,47 @@
+img {
+  max-width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  width: calc(100% - 40px);
+  max-width: $website-width;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    width: calc(100% - 80px);
+  }
+
+  @media screen and (min-width: $breakpoint-md) {
+    width: 95vw;
+  }
+}
+
+
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+.desktop {
+  display: none;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    display: block;
+
+    &.flex {
+      display: flex;
+    }
+  }
+}
+
+
+.mobile {
+  display: block;
+
+  @media screen and (min-width: $breakpoint-sm) {
+    display: none;
+  }
+}
