@@ -1,0 +1,41 @@
+.resources-content {
+  &.flex {
+    flex-direction: column;
+  }
+
+  h2 {
+    font-size: 35px;
+    margin-bottom: 45px;
+  }
+
+}
+
+.resources-container {
+  padding-bottom: 100px;
+
+  &._websites {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px;
+  }
+
+    &._books {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 45px;
+      a{
+        text-decoration: none;
+      }
+    p {
+      font-size: 16px;
+      text-align: center;
+    }
+
+    }
+
+    img {
+      width: 125px;
+      margin: 25px auto;
+      display: block;
+      border: 2px solid $darkGreen;
+    }
+
+}
