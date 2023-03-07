@@ -4,38 +4,52 @@
   }
 
   h2 {
+    font-size: 25px;
+    margin-bottom: 25px;
+    @media screen and (min-width: $breakpoint-sm) {
     font-size: 35px;
     margin-bottom: 45px;
+    }
   }
 
 }
 
 .resources-container {
   padding-bottom: 100px;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 30px;
 
   &._websites {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 45px;
+    @media screen and (min-width: $breakpoint-md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 45px;
+    }
   }
 
-    &._books {
+  &._books {
+      padding-top: 25px;
+    @media screen and (min-width: $breakpoint-sm) {
       grid-template-columns: repeat(4, 1fr);
       gap: 45px;
-      a{
-        text-decoration: none;
-      }
+      padding-top: 75px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
     p {
       font-size: 16px;
       text-align: center;
     }
 
-    }
+  }
 
-    img {
-      width: 125px;
-      margin: 25px auto;
-      display: block;
-      border: 2px solid $darkGreen;
-    }
+  img {
+    width: 125px;
+    margin: 0 auto 25px;
+    display: block;
+    border: 2px solid $darkGreen;
+  }
 
 }
