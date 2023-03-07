@@ -6,9 +6,10 @@
   h2 {
     font-size: 25px;
     margin-bottom: 25px;
+
     @media screen and (min-width: $breakpoint-sm) {
-    font-size: 35px;
-    margin-bottom: 45px;
+      font-size: 35px;
+      margin-bottom: 45px;
     }
   }
 
@@ -27,7 +28,8 @@
   }
 
   &._books {
-      padding-top: 25px;
+    padding-top: 25px;
+
     @media screen and (min-width: $breakpoint-sm) {
       grid-template-columns: repeat(4, 1fr);
       gap: 45px;
@@ -43,13 +45,18 @@
       text-align: center;
     }
 
+    img {
+      width: 125px;
+      margin: 0 auto 25px;
+      border: 2px solid $darkGreen;
+    }
+
   }
 
   img {
-    width: 125px;
-    margin: 0 auto 25px;
+    width: 150px;
+    margin: 0 0 25px;
     display: block;
-    border: 2px solid $darkGreen;
   }
 
 }
