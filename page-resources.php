@@ -41,8 +41,8 @@
         </div>
         <?php endwhile; ?>
       <?php endif; ?>
-      <?php if( have_rows('book_resources') ): ?>
-        <?php while( have_rows('book_resources') ): the_row(); ?>
+      <?php if( have_rows('book_resources_r') ): ?>
+        <?php while( have_rows('book_resources_r') ): the_row(); ?>
        <h2><?php the_sub_field('book_title'); ?></h2>
         <p><?php the_sub_field('book_blurb'); ?></p>
         <div class="resources-container grid _books">
