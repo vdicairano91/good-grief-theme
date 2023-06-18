@@ -4,18 +4,46 @@
 		padding: 0;
 		justify-content: space-between;
 		list-style: none;
-			@media screen and (max-width: $breakpoint-sm) {
+
+		@media screen and (max-width: $breakpoint-sm) {
 			flex-direction: column;
-			height: 150px;
+			height: 250px;
 			margin-top: 35px;
 		}
 
 		li {
-			a {
-				text-transform: uppercase;
-				font-size: 17px;
-				text-decoration: none;
+			position: relative;
+
+			@media (hover: hover) {
+				&:hover .sub-menu {
+					display: flex;
+				}
 			}
+		}
+
+		a {
+			text-transform: uppercase;
+			font-size: 17px;
+			text-decoration: none;
+		}
+	}
+
+	.sub-menu {
+		height: auto;
+		margin: 10px 0 0 10px;
+
+		@media screen and (min-width: $breakpoint-sm) {
+			margin: 0;
+			display: none;
+			position: absolute;
+			background-color: $white;
+			padding: 20px 20px 10px;
+			flex-direction: column;
+			width: max-content;
+		}
+
+		li+li {
+			margin-top: 10px;
 		}
 	}
 }
