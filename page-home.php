@@ -28,7 +28,7 @@
 	</div>
   <section>
 		<div class="container">
-		<div class="blog-post-hero">
+		<div class="blog-grid grid">
 	<?php
 
 		$array = get_posts(array('posts_per_page' => 1));
@@ -52,6 +52,33 @@
 		wp_reset_postdata();
 		
 	?>
+		</div>
+	</section>
+<section>
+		<div class="container">
+			<h3>Featured Articles</h3>
+			<div class="grid featured blog-grid">
+      <?php if( have_rows('featured_articles') ): ?>
+        <?php while( have_rows('featured_articles') ): the_row(); ?>
+				<?php
+					$featured_post = get_sub_field('featured_post');
+					$date = $featured_post->post_date;
+					$formateDate = date('F j, Y', strtotime($date));
+
+					if( $featured_post ): ?>
+					<a href="<?php echo esc_html( $featured_post->post_link ); ?>" class="blog-post">
+					<?php echo get_the_post_thumbnail( $featured_post->ID ); ?>
+						<div>
+							<div class='blog-info'>
+								<p class='blog-date'><?php echo esc_html($formateDate); ?></p>
+								<p class='excerpt'><?php echo esc_html( $featured_post->post_excerpt ); ?></p>
+								<p class='read-more btn'>Read More</p>
+							</div>
+						</div>
+					</a>
+					<?php endif; ?>
+				<?php endwhile; ?>
+			<?php endif; ?>
 		</div>
 	</section>
 </main>
