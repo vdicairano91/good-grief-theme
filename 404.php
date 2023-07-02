@@ -1,4 +1,4 @@
-<title>Page not found | ONUREG® (azacitidine)</title>
+<title>Page not found</title>
 <?php get_header(); ?>
 
 <main id="efficacy">
