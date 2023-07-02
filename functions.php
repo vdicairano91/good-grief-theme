@@ -86,25 +86,9 @@ function scripts_and_styles() {
   global $wp_styles, $post;
 
   if (!is_admin()) {
-    wp_enqueue_script( 'jquery' );
-
-    // if (WP_ENV == 'local') {
-    //   wp_register_script( 'main-bundle-js', get_stylesheet_directory_uri() . '/library/javascript/main.bundle.js', array('jquery'), '', true );
-    //   wp_enqueue_script( 'main-bundle-js' );
-    //   wp_localize_script( 'main-bundle-js', 'ONUREG_', array(
-    //     'pageID' => $post->ID,
-    //     'ajaxurl' => admin_url( 'admin-ajax.php' )
-    //   ));
-    //   // deactivate_plugins( array( '/really-simple-ssl/rlrsssl-really-simple-ssl.php', '/w3-total-cache/w3-total-cache.php' ), true);
-    // }
-    // else {
-      wp_register_script('main-bundle-js', get_stylesheet_directory_uri() . '/library/javascript/main.bundle.js', array('jquery'), '', 'all');
+      wp_register_script('main-bundle-js', get_stylesheet_directory_uri() . '/library/javascript/main.bundle.js', array(''), '', 'all');
       wp_enqueue_script('main-bundle-js');
-    //   wp_localize_script( 'main-bundle-js', 'ONUREG_', array(
-    //     'pageID' => $post->ID,
-    //     'ajaxurl' => admin_url( 'admin-ajax.php' ))
-    //   );
-    // }
+
 
     /** Styles **/
     wp_register_style( 'stylesheet', get_stylesheet_directory_uri() . '/library/css/styles.css', array(), '', 'all' );
@@ -185,7 +169,22 @@ function yoast_change_opengraph_type( $type ) {
 }
 
 
+add_action('acf/init', 'my_acf_op_init');
+function my_acf_op_init() {
 
+    // Check function exists.
+    if( function_exists('acf_add_options_page') ) {
+
+        // Register options page.
+        $option_page = acf_add_options_page(array(
+            'page_title'    => __('Global General Settings'),
+            'menu_title'    => __('Global Settings'),
+            'menu_slug'     => 'global-general-settings',
+            'capability'    => 'edit_posts',
+            'redirect'      => false
+        ));
+    }
+}
 
 
 

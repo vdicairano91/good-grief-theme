@@ -1,0 +1,10 @@
+.cta {
+  background-color: $pink;
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 750px;
+  }
+}
