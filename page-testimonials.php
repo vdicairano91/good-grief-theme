@@ -36,12 +36,29 @@
 
 			$date = $post->post_date;
 			$id = $post->ID;
+			$image = get_field('photo');
+
+			
 
 			echo "<a href='" . get_post_permalink($id) . "' class='testimonial-post'>";
-			echo get_the_post_thumbnail();
-			echo "<div><div class='testimonial-info'><p class='excerpt'>";
-			echo the_field("excerpt");
-			echo "</p><p class='read-more btn'>Read More</p></div></div></a>";
+			if( $image ) {
+				echo "<img src='";
+				echo $image["url"];
+				echo "'alt='";
+				echo $image["alt"];
+				echo "'/>";
+			}else{
+				echo "<div class='no-image'><span>";
+				echo the_field("name");
+				echo "</span></div>";
+			}
+			echo "<h3>";
+			echo the_field("name");
+			echo ", ";
+			echo the_field("age");
+			echo "</h3><p class='location'>";
+			echo the_field("location");
+			echo "</p><p class='read-more btn'>Read Their Story</p></a>";
 
 		}
 
