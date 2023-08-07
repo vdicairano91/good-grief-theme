@@ -104,6 +104,9 @@
     border-radius: 15px;
   @include boxShadow;
 
+  &[href^="https://goodgriefmoms.com/testimonial/338/"]{
+    order: -1;
+  }
   img {
     max-width: 150px;
   }

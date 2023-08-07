@@ -86,7 +86,9 @@ function scripts_and_styles() {
   global $wp_styles, $post;
 
   if (!is_admin()) {
-      wp_register_script('main-bundle-js', get_stylesheet_directory_uri() . '/library/javascript/main.bundle.js', array(''), '', 'all');
+wp_enqueue_script( 'jquery' );
+
+      wp_register_script('main-bundle-js', get_stylesheet_directory_uri() . '/library/javascript/main.bundle.js', array('jquery'), '', 'all');
       wp_enqueue_script('main-bundle-js');
 
 
@@ -185,6 +187,7 @@ function my_acf_op_init() {
         ));
     }
 }
+
 
 
 
